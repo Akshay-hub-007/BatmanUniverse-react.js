@@ -4,7 +4,7 @@ import axios from 'axios';
 import Pagination from "./Pagination"
 const Movies = ({handleWatchList,removeWatchList,watchList}) => {
   const [movies, setMovies] = useState([]);
-  const [pageNo,setpageNo]=useState(9)
+  const [pageNo,setpageNo]=useState(1)
   
 
   useEffect(() => {
@@ -14,9 +14,8 @@ const Movies = ({handleWatchList,removeWatchList,watchList}) => {
       }
     }).then((res) => {
       setMovies(res.data.Search); 
-      // console.log(res.data);
     }).catch((error) => {
-      // console.error('Error fetching data:', error);
+          console.log(error);
     });
   },[pageNo]);
 
