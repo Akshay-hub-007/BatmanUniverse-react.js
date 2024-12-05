@@ -65,7 +65,7 @@ function SignUp() {
 
           </form>
           <div className='mt-2 text-center'>
-             <a href="/login"><span className="text-blue-500">already have an account</span></a>
+             <a href="https://movieapp-api-akshay.vercel.app/login"><span className="text-blue-500">already have an account</span></a>
           </div>
         </div>
       </div>
