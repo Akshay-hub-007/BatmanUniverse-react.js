@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {useState,useEffect} from "react"
 import Login from "./Components/Login.jsx";
 import SignUp from "./Components/SignUp.jsx";
-import Welcome from "./Components/welcome.jsx";
+import Welcome from "./Components/Welcome.jsx";
 import ResetPassword from "./Components/ResetPassword.jsx";
 function App() {
  
