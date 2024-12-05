@@ -1,9 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Watchlist = ({ watchList, setWatchList,removeWatchList }) => {
   const [search, setSearch] = useState('');
   const [genre, setGenre] = useState(["All genre"])
   const [currGenre,setcurrGenre]=useState("All genre")
+  const navigate=useNavigate()
+  useEffect(()=>{
+    const localStorageuserExist=localStorage.getItem("user")
+    if(!localStorageuserExist)
+    {
+     navigate("/login")
+    }
+   },[])
   const handleSearch = (e) => {
     setSearch(e.target.value);
   };

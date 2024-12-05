@@ -5,6 +5,10 @@ import Watchlist from "./Components/Watchlist.jsx";
 import Banner from "./Components/Banner.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {useState,useEffect} from "react"
+import Login from "./Components/Login.jsx";
+import SignUp from "./Components/SignUp.jsx";
+import Welcome from "./Components/welcome.jsx";
+import ResetPassword from "./Components/ResetPassword.jsx";
 function App() {
  
   const [watchList,setwatchList]=useState([])
@@ -29,13 +33,20 @@ function App() {
     }
     setwatchList(JSON.parse(localStorageMovies))
   },[])
+
+  
   return (
     
     <>
       <BrowserRouter>
-        <Navbar />
+   <Navbar />
+
         <Routes>
-          <Route path="/" element={
+          <Route path="/" element={<Welcome/>}></Route>
+          <Route path="/signup" element={<SignUp/>}/>
+          <Route path="/login" element={<Login/>}></Route>
+          <Route path="/reset" element={<ResetPassword/>}></Route>
+          <Route path="/home" element={
             <>
               <div style={{ display: "flex", flexWrap: "wrap" }}>
               <Banner />
@@ -45,6 +56,7 @@ function App() {
             <Route path="/watchlist" element={<Watchlist watchList={watchList} setWatchList={setwatchList} removeWatchList={removeWatchList}/>} />
         </Routes>
       </BrowserRouter>
+   
     </>
   );
 }

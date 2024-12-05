@@ -2,11 +2,19 @@ import React, { useEffect, useState } from 'react';
 import MovieCard from './MovieCard'; 
 import axios from 'axios';
 import Pagination from "./Pagination"
+import { useNavigate, useParams } from 'react-router-dom';
 const Movies = ({handleWatchList,removeWatchList,watchList}) => {
   const [movies, setMovies] = useState([]);
   const [pageNo,setpageNo]=useState(1)
-  
-
+   const navigate=useNavigate()
+  useEffect(()=>{
+   const localStorageuserExist=localStorage.getItem("user")
+   if(!localStorageuserExist)
+   {
+    navigate("/login")
+   }
+  },[])
+    
   useEffect(() => {
     axios.get(`https://www.omdbapi.com/?s=Batman&page=${pageNo}&apikey=171b626c`,{
       params:{
@@ -52,7 +60,7 @@ const Movies = ({handleWatchList,removeWatchList,watchList}) => {
         justifyContent: "space-around",
         flexWrap: "wrap",
         flex:"2"
-      }}>
+      }} className="">
         {movies.map((movie, index) => (
           <MovieCard key={index} movieObj={movie}  name={movie.Title} moviePath={movie.Poster} handleWatchList={handleWatchList} removeWatchList={removeWatchList} watchList={watchList}/>
         ))}
