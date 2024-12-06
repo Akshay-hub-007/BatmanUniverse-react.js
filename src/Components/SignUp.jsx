@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import image from "../assets/Image1.svg"
 
 function SignUp() {
@@ -65,7 +65,7 @@ function SignUp() {
 
           </form>
           <div className='mt-2 text-center'>
-             <a href="https://movieapp-api-akshay.vercel.app/login"><span className="text-blue-500">already have an account</span></a>
+             <NavLink href="https://movieapp-api-akshay.vercel.app/login"><span className="text-blue-500">already have an account</span></NavLink>
           </div>
         </div>
       </div>

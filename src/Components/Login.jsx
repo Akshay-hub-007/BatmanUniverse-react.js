@@ -6,8 +6,8 @@ function Login() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-     
-    
+
+
     const navigate = useNavigate()
 
 
@@ -44,7 +44,7 @@ function Login() {
 
     return (
         <>
-            <div className="w-auto flex flex-row items-center justify-center h-screen space-x-8 ">
+            <div className="w-auto flex flex-col md:flex-row items-center justify-center h-screen md:space-x-8 space-y-8 mt-8 md:mt-0">
                 <div>
                     <img src={image} alt="" className='w-[30rem]' />
                 </div>
