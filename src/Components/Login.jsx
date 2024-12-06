@@ -15,6 +15,7 @@ function Login() {
 
         e.preventDefault()
         if (!email || !password) {
+            
             console.error("Email and Password are required");
             return;
         }
