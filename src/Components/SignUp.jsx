@@ -60,12 +60,12 @@ function SignUp() {
                 onChange={handlePassword}
               />
               <input type="submit"
-                className=" w-[20rem] border-2 mt-4 bg-blue-400 border-slate-400 rounded-md focus:outline-none p-1" />
+                className=" w-[20rem] border-2 mt-4 bg-blue-400 border-slate-400 rounded-md focus:outline-none p-1 cursor-pointer " />
             </div>
 
           </form>
           <div className='mt-2 text-center'>
-             <NavLink href="https://movieapp-api-akshay.vercel.app/login"><span className="text-blue-500">already have an account</span></NavLink>
+             <NavLink to="/login"><span className="text-blue-500">already have an account</span></NavLink>
           </div>
         </div>
       </div>

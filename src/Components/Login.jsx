@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import image from "../assets/Image.svg"
 function Login() {
 
@@ -65,17 +65,17 @@ function Login() {
                                 onChange={handlePassword}
                             />
                             <div className='flex flex-col'>
-                                <input className=" w-[20rem] border-2 mt-4 bg-blue-400 border-slate-400 rounded-md focus:outline-none"
+                                <input className=" w-[20rem] border-2 mt-4 bg-blue-400 border-slate-400 rounded-md focus:outline-none cursor-pointer"
                                     type="submit" />
-                                <a href="/reset">
+                                <NavLink to="/reset">
                                     <span className=' text-sm text-blue-500 flex flex-row-reverse mr-[3rem]'>forgot-password</span>
-                                </a>
+                                </NavLink>
                             </div>
                         </div>
-                        <a href="/signup">
+                        <NavLink to="/signup">
                             <div className='text-center mt-5 text-blue-500'>Don't have account create one</div>
 
-                        </a>
+                        </NavLink>
                     </form>
                 </div>
             </div>
